@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xenophile", "xenophile.csproj", "{3196A3CA-1487-8069-3648-D85115946D33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xenophile.Editor", "xenophile.Editor.csproj", "{1C15233F-56A2-BFDC-9BEF-BB5062CB2708}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3196A3CA-1487-8069-3648-D85115946D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3196A3CA-1487-8069-3648-D85115946D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3196A3CA-1487-8069-3648-D85115946D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3196A3CA-1487-8069-3648-D85115946D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C15233F-56A2-BFDC-9BEF-BB5062CB2708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C15233F-56A2-BFDC-9BEF-BB5062CB2708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C15233F-56A2-BFDC-9BEF-BB5062CB2708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C15233F-56A2-BFDC-9BEF-BB5062CB2708}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
