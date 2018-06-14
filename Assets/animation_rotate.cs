@@ -18,6 +18,6 @@ public class animation_rotate : MonoBehaviour {
     {
         Transform transform = GetComponent<Transform>();
         //Vector3 k_ModelRotation = new Vector3(0.0f, 1.0f, 0.0f);
-        transform.Rotate(Vector3.forward * 15 * Time.deltaTime);
+        transform.Rotate(Vector3.up * 15 * Time.deltaTime);
     }
 }

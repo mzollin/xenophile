@@ -60,8 +60,9 @@ namespace GoogleARCore.Examples.HelloAR
         /// The rotation in degrees need to apply to model when the Andy model is placed.
         /// </summary>
         //private const float k_ModelRotation = 180.0f;
-        private Vector3 k_ModelRotation = new Vector3(-90.0f, 180.0f, 0.0f);
-        private Vector3 k_ModelTranslation = new Vector3(0.0f, 0.0f, 0.5f);
+        //private Vector3 k_ModelRotation = new Vector3(-90.0f, 180.0f, 0.0f);
+        private Vector3 k_ModelRotation = new Vector3(0.0f, 0.0f, 0.0f);
+        private Vector3 k_ModelTranslation = new Vector3(0.0f, 0.0f, 0.0f);
 
         /// <summary>
         /// A list to hold all planes ARCore is tracking in the current frame. This object is used across
