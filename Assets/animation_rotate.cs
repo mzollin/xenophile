@@ -11,13 +11,13 @@ public class animation_rotate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+	    
 	}
 
     private void FixedUpdate()
     {
         Transform transform = GetComponent<Transform>();
-        Vector3 k_ModelRotation = new Vector3(0.0f, 1.0f, 0.0f);
-        transform.Rotate(k_ModelRotation * Time.deltaTime);
+        //Vector3 k_ModelRotation = new Vector3(0.0f, 1.0f, 0.0f);
+        transform.Rotate(Vector3.forward * 15 * Time.deltaTime);
     }
 }

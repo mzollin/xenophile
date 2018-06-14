@@ -61,7 +61,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         //private const float k_ModelRotation = 180.0f;
         private Vector3 k_ModelRotation = new Vector3(-90.0f, 180.0f, 0.0f);
-        private Vector3 k_ModelTranslation = new Vector3(0.0f, 0.0f, 1.2f);
+        private Vector3 k_ModelTranslation = new Vector3(0.0f, 0.0f, 0.5f);
 
         /// <summary>
         /// A list to hold all planes ARCore is tracking in the current frame. This object is used across
