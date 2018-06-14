@@ -59,7 +59,8 @@ namespace GoogleARCore.Examples.HelloAR
         /// <summary>
         /// The rotation in degrees need to apply to model when the Andy model is placed.
         /// </summary>
-        private const float k_ModelRotation = 180.0f;
+        //private const float k_ModelRotation = 180.0f;
+        private Vector3 k_ModelRotation = new Vector3(-90.0f, 180.0f, 0.0f);
 
         /// <summary>
         /// A list to hold all planes ARCore is tracking in the current frame. This object is used across
@@ -122,7 +123,7 @@ namespace GoogleARCore.Examples.HelloAR
                     //var spaceshipObject = Instantiate(SpaceshipPrefab, hit.Pose.position, hit.Pose.rotation);
 
                     // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
-                    andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
+                    andyObject.transform.Rotate(k_ModelRotation);
                     //spaceshipObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
 
                     // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
