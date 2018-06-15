@@ -49,7 +49,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// A model to place when a raycast from a user touch hits a plane.
         /// </summary>
         public GameObject AndyAndroidPrefab;
-        //public GameObject SpaceshipPrefab;
+        public GameObject AntigravitypodPrefab;
 
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
@@ -62,7 +62,9 @@ namespace GoogleARCore.Examples.HelloAR
         //private const float k_ModelRotation = 180.0f;
         //private Vector3 k_ModelRotation = new Vector3(-90.0f, 180.0f, 0.0f);
         private Vector3 k_ModelRotation = new Vector3(0.0f, 0.0f, 0.0f);
-        private Vector3 k_ModelTranslation = new Vector3(0.0f, 0.0f, 0.0f);
+        private Vector3 l_ModelRotation = new Vector3(-90.0f, 0.0f, 0.0f);
+        private Vector3 k_ModelTranslation = new Vector3(0.0f, 0.0f, 0.5f);
+        private Vector3 k_ModelScale = new Vector3(0.25f, 0.25f, 0.25f);
 
         /// <summary>
         /// A list to hold all planes ARCore is tracking in the current frame. This object is used across
@@ -122,10 +124,12 @@ namespace GoogleARCore.Examples.HelloAR
                 {
                     // Instantiate Andy model at the hit pose.
                     var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
-                    //var spaceshipObject = Instantiate(SpaceshipPrefab, hit.Pose.position, hit.Pose.rotation);
+                    var antigravitypodObject = Instantiate(AntigravitypodPrefab, hit.Pose.position, hit.Pose.rotation);
 
                     // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
                     andyObject.transform.Rotate(k_ModelRotation);
+                    antigravitypodObject.transform.Rotate(l_ModelRotation);
+                    antigravitypodObject.transform.localScale = k_ModelScale;
                     andyObject.transform.Translate(k_ModelTranslation);
                     //spaceshipObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
 
@@ -135,7 +139,7 @@ namespace GoogleARCore.Examples.HelloAR
 
                     // Make Andy model a child of the anchor.
                     andyObject.transform.parent = anchor.transform;
-                    //spaceshipObject.transform.parent = anchor.transform;
+                    antigravitypodObject.transform.parent = anchor.transform;
                 }
             }
         }
