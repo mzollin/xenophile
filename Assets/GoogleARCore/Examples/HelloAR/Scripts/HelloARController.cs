@@ -49,6 +49,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         public GameObject AlienartifactPrefab;
         public GameObject AntigravitypodPrefab;
+        public GameObject AlienfontPrefab;
 
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
@@ -66,6 +67,10 @@ namespace GoogleARCore.Examples.HelloAR
         private Vector3 antigravitypodRotation = new Vector3(-90.0f, 0.0f, 0.0f);
         private Vector3 antigravitypodTranslation = new Vector3(0.0f, 0.0f, 0.0f);
         private Vector3 antigravitypodScale = new Vector3(0.25f, 0.25f, 0.25f);
+
+        private Vector3 alienfontRotation = new Vector3(0.0f, 0.0f, 0.0f);
+        private Vector3 alienfontTranslation = new Vector3(1.0f, 0.0f, 3.0f);
+        private Vector3 alienfontScale = new Vector3(0.25f, 0.25f, 0.25f);
 
         /// <summary>
         /// A list to hold all planes ARCore is tracking in the current frame. This object is used across
@@ -126,6 +131,7 @@ namespace GoogleARCore.Examples.HelloAR
                     // Instantiate Andy model at the hit pose.
                     var alienartifactObject = Instantiate(AlienartifactPrefab, hit.Pose.position, hit.Pose.rotation);
                     var antigravitypodObject = Instantiate(AntigravitypodPrefab, hit.Pose.position, hit.Pose.rotation);
+                    var alienfontObject = Instantiate(AlienfontPrefab, hit.Pose.position, hit.Pose.rotation);
 
                     // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
                     alienartifactObject.transform.Rotate(alienartifactRotation);
@@ -135,7 +141,10 @@ namespace GoogleARCore.Examples.HelloAR
                     antigravitypodObject.transform.Rotate(antigravitypodRotation);
                     antigravitypodObject.transform.Translate(antigravitypodTranslation);
                     antigravitypodObject.transform.localScale = antigravitypodScale;
-                    //spaceshipObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
+
+                    alienfontObject.transform.Rotate(alienfontRotation);
+                    alienfontObject.transform.Translate(alienfontTranslation);
+                    alienfontObject.transform.localScale = alienfontScale;
 
                     // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
                     // world evolves.
@@ -144,6 +153,7 @@ namespace GoogleARCore.Examples.HelloAR
                     // Make Andy model a child of the anchor.
                     alienartifactObject.transform.parent = anchor.transform;
                     antigravitypodObject.transform.parent = anchor.transform;
+                    alienfontObject.transform.parent = anchor.transform;
                 }
             }
         }

@@ -270,6 +270,8 @@ MonoBehaviour:
   AlienartifactPrefab: {fileID: 1536770372799938, guid: d0068c3142765c04582b06feab9c9954,
     type: 2}
   AntigravitypodPrefab: {fileID: 100000, guid: 9fce70f6e687d604a912662b52801ba8, type: 3}
+  AlienfontPrefab: {fileID: 1651933359531598, guid: 1edbc5c072a68c2449f85a0666a0ef88,
+    type: 2}
   SearchingForPlaneUI: {fileID: 1133631540}
 --- !u!20 &896679035 stripped
 Camera:
