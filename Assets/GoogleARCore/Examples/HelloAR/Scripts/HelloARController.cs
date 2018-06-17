@@ -69,8 +69,8 @@ namespace GoogleARCore.Examples.HelloAR
         private Vector3 antigravitypodScale = new Vector3(0.25f, 0.25f, 0.25f);
 
         private Vector3 alienfontRotation = new Vector3(0.0f, 0.0f, 0.0f);
-        private Vector3 alienfontTranslation = new Vector3(1.0f, 0.0f, 3.0f);
-        private Vector3 alienfontScale = new Vector3(0.25f, 0.25f, 0.25f);
+        private Vector3 alienfontTranslation = new Vector3(0.0f, 0.0f, 0.0f);
+        private Vector3 alienfontScale = new Vector3(0.1f, 0.1f, 0.1f);
 
         /// <summary>
         /// A list to hold all planes ARCore is tracking in the current frame. This object is used across
@@ -82,6 +82,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// True if the app is in the process of quitting due to an ARCore connection error, otherwise false.
         /// </summary>
         private bool m_IsQuitting = false;
+        private GameObject alienfontObject;
 
         /// <summary>
         /// The Unity Update() method.
@@ -131,7 +132,7 @@ namespace GoogleARCore.Examples.HelloAR
                     // Instantiate Andy model at the hit pose.
                     var alienartifactObject = Instantiate(AlienartifactPrefab, hit.Pose.position, hit.Pose.rotation);
                     var antigravitypodObject = Instantiate(AntigravitypodPrefab, hit.Pose.position, hit.Pose.rotation);
-                    var alienfontObject = Instantiate(AlienfontPrefab, hit.Pose.position, hit.Pose.rotation);
+                    alienfontObject = Instantiate(AlienfontPrefab, hit.Pose.position, hit.Pose.rotation);
 
                     // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
                     alienartifactObject.transform.Rotate(alienartifactRotation);
@@ -156,6 +157,7 @@ namespace GoogleARCore.Examples.HelloAR
                     alienfontObject.transform.parent = anchor.transform;
                 }
             }
+            //alienfontObject.transform.LookAt(FirstPersonCamera.transform.position);
         }
 
         /// <summary>

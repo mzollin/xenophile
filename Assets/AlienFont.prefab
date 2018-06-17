@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 23806952313228808}
   - component: {fileID: 102757886444831248}
   - component: {fileID: 114740865665248912}
+  - component: {fileID: 114510554337041622}
   m_Layer: 0
   m_Name: AlienFont
   m_TagString: Untagged
@@ -100,7 +101,7 @@ TextMesh:
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
   m_FontStyle: 1
@@ -109,6 +110,19 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4293132038
+--- !u!114 &114510554337041622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651933359531598}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f6a574f7b31d8478aeeeed28cc3953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstPersonCamera: {fileID: 20669368952454296, guid: 834607d1da17c874badfd41d39c519ff,
+    type: 2}
 --- !u!114 &114740865665248912
 MonoBehaviour:
   m_ObjectHideFlags: 1
