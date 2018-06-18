@@ -17,11 +17,11 @@ public class ProximitySensor : MonoBehaviour {
         Vector3 pos = GetComponent<Transform>().position;
         if(Vector3.Distance(campos, pos) <= 1.5)
         {
-            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<MeshRenderer>().enabled = true;
         }
         else
         {
-            GetComponent<MeshRenderer>().enabled = true;
+            GetComponent<MeshRenderer>().enabled = false;
         }
 	}
 }

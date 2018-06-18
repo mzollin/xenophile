@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class ButtonAction : MonoBehaviour {
 
+    public GameObject obj;
+
     public string nextScene;
 
 	// Use this for initialization
@@ -24,6 +26,7 @@ public class ButtonAction : MonoBehaviour {
     void TaskOnClick()
     {
         Debug.Log("Button " + gameObject.name + " clicked.");
+        StringHolder.name = obj.name;
         SceneManager.LoadScene(nextScene);
     }
 }
