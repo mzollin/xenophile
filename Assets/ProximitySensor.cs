@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProximitySensor : MonoBehaviour {
 
-    public GameObject obj:
+    public GameObject obj;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,6 @@ public class ProximitySensor : MonoBehaviour {
         }
         else
         {
-
             GetComponent<MeshRenderer>().enabled = true;
         }
 	}
