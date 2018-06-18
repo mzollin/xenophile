@@ -5,18 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/GoogleARCore/Examples/HelloAR/Scenes/HelloAR.unity
     guid: e6a6fa04348cb45c9b0221eb19c946da
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: ba1e11ebd0c48d24b98c8201bb7e2ca6
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Suzanne.unity
     guid: 59c2731d3c2432846878fb912af135b2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ObjViewer.unity
     guid: 20e3c165de1dde6489fdd15c6210a6b3

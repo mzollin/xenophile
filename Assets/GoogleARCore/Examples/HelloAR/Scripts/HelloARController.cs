@@ -23,6 +23,7 @@ namespace GoogleARCore.Examples.HelloAR
     using System.Collections.Generic;
     using GoogleARCore;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
     // Set up touch input propagation while using Instant Preview in the editor.
@@ -105,6 +106,19 @@ namespace GoogleARCore.Examples.HelloAR
                     if (!objectCreated)
                     {
                         var antigravitypodObject = Instantiate(AntigravitypodPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                        antigravitypodObject.transform.Rotate(antigravitypodRotation);
+                        antigravitypodObject.transform.Translate(antigravitypodTranslation);
+                        antigravitypodObject.transform.localScale = antigravitypodScale;
+
+                        var alienartifactObject = Instantiate(AlienartifactPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                        alienartifactObject.transform.Rotate(alienartifactRotation);
+                        alienartifactObject.transform.Translate(alienartifactTranslation);
+                        alienartifactObject.transform.localScale = alienartifactScale;
+
+                        var anchor = m_AllPlanes[i].CreateAnchor(m_AllPlanes[i].CenterPose);
+                        antigravitypodObject.transform.parent = anchor.transform;
+                        alienartifactObject.transform.parent = anchor.transform;
+
                         objectCreated = true;
                     }
                     break;
@@ -119,6 +133,9 @@ namespace GoogleARCore.Examples.HelloAR
             {
                 return;
             }
+
+            // Player has touched the Screen -> go back to main menu
+            SceneManager.LoadScene("Menu");
 
             // Raycast against the location the player touched to search for planes.
             TrackableHit hit;
@@ -138,31 +155,31 @@ namespace GoogleARCore.Examples.HelloAR
                 else
                 {
                     // Instantiate Andy model at the hit pose.
-                    var alienartifactObject = Instantiate(AlienartifactPrefab, hit.Pose.position, hit.Pose.rotation);
+                    //var alienartifactObject = Instantiate(AlienartifactPrefab, hit.Pose.position, hit.Pose.rotation);
                     //var antigravitypodObject = Instantiate(AntigravitypodPrefab, hit.Pose.position, hit.Pose.rotation);
                     //alienfontObject = Instantiate(AlienfontPrefab, hit.Pose.position, hit.Pose.rotation);
 
                     // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
-                    alienartifactObject.transform.Rotate(alienartifactRotation);
-                    alienartifactObject.transform.Translate(alienartifactTranslation);
-                    alienartifactObject.transform.localScale = alienartifactScale;
+                    //alienartifactObject.transform.Rotate(alienartifactRotation);
+                    //alienartifactObject.transform.Translate(alienartifactTranslation);
+                    //alienartifactObject.transform.localScale = alienartifactScale;
 
                     //antigravitypodObject.transform.Rotate(antigravitypodRotation);
                     //antigravitypodObject.transform.Translate(antigravitypodTranslation);
                     //antigravitypodObject.transform.localScale = antigravitypodScale;
 
-                    alienfontObject.transform.Rotate(alienfontRotation);
-                    alienfontObject.transform.Translate(alienfontTranslation);
-                    alienfontObject.transform.localScale = alienfontScale;
+                    //alienfontObject.transform.Rotate(alienfontRotation);
+                    //alienfontObject.transform.Translate(alienfontTranslation);
+                    //alienfontObject.transform.localScale = alienfontScale;
 
                     // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
                     // world evolves.
-                    var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+                    //var anchor = hit.Trackable.CreateAnchor(hit.Pose);
 
                     // Make Andy model a child of the anchor.
-                    alienartifactObject.transform.parent = anchor.transform;
+                    //alienartifactObject.transform.parent = anchor.transform;
                     //antigravitypodObject.transform.parent = anchor.transform;
-                    alienfontObject.transform.parent = anchor.transform;
+                    //alienfontObject.transform.parent = anchor.transform;
                 }
             }
             //alienfontObject.transform.LookAt(FirstPersonCamera.transform.position);
