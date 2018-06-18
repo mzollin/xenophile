@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 23355234976771738}
   - component: {fileID: 114646224073824522}
   - component: {fileID: 114128547375591412}
+  - component: {fileID: 65868761968809752}
   m_Layer: 0
   m_Name: SuzanneObj
   m_TagString: Untagged
@@ -425,6 +426,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65868761968809752
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738090505740424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6613677, y: 1.6067864, z: 1.9150395}
+  m_Center: {x: 0, y: -0.019503001, z: -0.0155635215}
 --- !u!102 &102129012648719398
 TextMesh:
   serializedVersion: 3

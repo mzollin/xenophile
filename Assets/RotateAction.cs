@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class RotateAction : MonoBehaviour {
 
-
 	// Use this for initialization
 	void Start () {
 		
@@ -21,18 +20,23 @@ public class RotateAction : MonoBehaviour {
             return;
         }
 
-        // Raycast against the location the player touched to search for planes.
-        TrackableHit hit;
-        TrackableHitFlags raycastFilter = TrackableHitFlags.None;
+        Camera camera = GameObject.FindObjectOfType<Camera>();
 
-        if (Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
+        // Raycast against the location the player touched to search for planes.
+
+        Ray raycast = camera.ScreenPointToRay(touch.position);
+        RaycastHit raycastHit;
+        if (Physics.Raycast(raycast, out raycastHit))
         {
-            Debug.Log("Hit something!");
-            DestroyObject(gameObject);
-            if ((hit.Trackable.Equals(this)))
+            Debug.LogError("Something Hit");
+            if (raycastHit.collider.name == name)
             {
                 TaskOnClick();
             }
+        }
+        else
+        {
+            Debug.LogError("No hit detected");
         }
 
     }
