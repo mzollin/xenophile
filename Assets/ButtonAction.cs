@@ -28,7 +28,13 @@ public class ButtonAction : MonoBehaviour {
     void TaskOnClick()
     {
         Debug.Log("Button " + gameObject.name + " clicked.");
-        StringHolder.name = obj.name;
+        if (obj == null)
+        {
+            StringHolder.name = "";
+        }
+        else {
+            StringHolder.name = obj.name;
+        }
         SceneManager.LoadScene(nextScene);
     }
 }
