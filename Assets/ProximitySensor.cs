@@ -18,10 +18,17 @@ public class ProximitySensor : MonoBehaviour {
         if(Vector3.Distance(campos, pos) <= 1.5)
         {
             GetComponent<MeshRenderer>().enabled = true;
+            foreach(var c in GetComponentsInChildren<MeshRenderer>()){
+                c.enabled = true;
+            }
         }
         else
         {
             GetComponent<MeshRenderer>().enabled = false;
+            foreach (var c in GetComponentsInChildren<MeshRenderer>())
+            {
+                c.enabled = false;
+            }
         }
 	}
 }
