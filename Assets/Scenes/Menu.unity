@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -460,8 +460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbbc0676851d5f4abc4a1e69ded921d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 100000, guid: 9c420c7d4807c614ab86b2913d3e94ff, type: 3}
-  nextScene: Suzanne
+  obj: {fileID: 1429438729472280, guid: 0f437e6d79cef314397b2d2eaaa41c11, type: 2}
+  nextScene: ObjViewer
 --- !u!1 &1081093366
 GameObject:
   m_ObjectHideFlags: 0

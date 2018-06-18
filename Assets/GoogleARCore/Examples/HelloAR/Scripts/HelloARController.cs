@@ -51,6 +51,7 @@ namespace GoogleARCore.Examples.HelloAR
         public GameObject AlienartifactPrefab;
         public GameObject AntigravitypodPrefab;
         public GameObject AlienfontPrefab;
+        public GameObject suzannePrefab;
 
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
@@ -105,19 +106,31 @@ namespace GoogleARCore.Examples.HelloAR
                     createObject = true;
                     if (!objectCreated)
                     {
-                        var antigravitypodObject = Instantiate(AntigravitypodPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
-                        antigravitypodObject.transform.Rotate(antigravitypodRotation);
-                        antigravitypodObject.transform.Translate(antigravitypodTranslation);
-                        antigravitypodObject.transform.localScale = antigravitypodScale;
+                        switch (StringHolder.name)
+                        {
+                            case "hellwailerPrefab":
 
-                        var alienartifactObject = Instantiate(AlienartifactPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
-                        alienartifactObject.transform.Rotate(alienartifactRotation);
-                        alienartifactObject.transform.Translate(alienartifactTranslation);
-                        alienartifactObject.transform.localScale = alienartifactScale;
+                                var antigravitypodObject = Instantiate(AntigravitypodPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                                antigravitypodObject.transform.Rotate(antigravitypodRotation);
+                                antigravitypodObject.transform.Translate(antigravitypodTranslation);
+                                antigravitypodObject.transform.localScale = antigravitypodScale;
 
-                        var anchor = m_AllPlanes[i].CreateAnchor(m_AllPlanes[i].CenterPose);
-                        antigravitypodObject.transform.parent = anchor.transform;
-                        alienartifactObject.transform.parent = anchor.transform;
+                                var alienartifactObject = Instantiate(AlienartifactPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                                alienartifactObject.transform.Rotate(alienartifactRotation);
+                                alienartifactObject.transform.Translate(alienartifactTranslation);
+                                alienartifactObject.transform.localScale = alienartifactScale;
+
+                                var anchor = m_AllPlanes[i].CreateAnchor(m_AllPlanes[i].CenterPose);
+                                antigravitypodObject.transform.parent = anchor.transform;
+                                alienartifactObject.transform.parent = anchor.transform;
+                                break;
+                            case "Suzanne":
+                                var suzanne = Instantiate(suzannePrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                                break;
+                            default:
+                                continue;
+
+                        }
 
                         objectCreated = true;
                     }
