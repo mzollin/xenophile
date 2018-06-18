@@ -29,11 +29,11 @@ public class animation_rotate : MonoBehaviour {
             //transform.Rotate(Vector3.up * 20 * Time.deltaTime);
             if (rotate_left)
             {
-                transform.Rotate(Vector3.down * 20 * Time.deltaTime);
+                transform.Rotate(Vector3.down * 25 * Time.deltaTime);
             }
             else if (rotate_right)
             {
-                transform.Rotate(Vector3.up * 20 * Time.deltaTime);
+                transform.Rotate(Vector3.up * 25 * Time.deltaTime);
             }
         }
     }

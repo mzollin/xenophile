@@ -21,13 +21,15 @@ public class RotateAction : MonoBehaviour {
 
             // do something
             // transform.Translate(-touchDeltaPosition.x * speed, -touchDeltaPosition.y * speed, 0);
-            if (touchDeltaPosition.x > 0)
+            if (touchDeltaPosition.x > 50)
             {
+                //rot.rotate = true;
                 rot.rotate_left = true;
                 rot.rotate_right = false;
             }
-            else if (touchDeltaPosition.x < 0)
+            else if (touchDeltaPosition.x < 50)
             {
+                //rot.rotate = true;
                 rot.rotate_left = false;
                 rot.rotate_right = true;
             }
