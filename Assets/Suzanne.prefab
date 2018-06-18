@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114646224073824522}
   - component: {fileID: 114128547375591412}
   - component: {fileID: 65868761968809752}
+  - component: {fileID: 64026119020591846}
   m_Layer: 0
   m_Name: SuzanneObj
   m_TagString: Untagged
@@ -400,6 +401,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1768714943691284}
   m_Mesh: {fileID: 4300000, guid: 9fce70f6e687d604a912662b52801ba8, type: 3}
+--- !u!64 &64026119020591846
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1738090505740424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 9c420c7d4807c614ab86b2913d3e94ff, type: 3}
 --- !u!64 &64681008659147330
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -434,7 +449,7 @@ BoxCollider:
   m_GameObject: {fileID: 1738090505740424}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.6613677, y: 1.6067864, z: 1.9150395}
   m_Center: {x: 0, y: -0.019503001, z: -0.0155635215}

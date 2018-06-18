@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class animation_rotate : MonoBehaviour {
 
-    public bool rotate = false;
+    public bool rotate = true;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,7 @@ public class animation_rotate : MonoBehaviour {
         //Vector3 k_ModelRotation = new Vector3(0.0f, 1.0f, 0.0f);
         if (rotate)
         {
-            transform.Rotate(Vector3.up * 15 * Time.deltaTime);
+            transform.Rotate(Vector3.up * 20 * Time.deltaTime);
         }
     }
 }
