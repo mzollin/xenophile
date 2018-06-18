@@ -148,7 +148,8 @@ namespace GoogleARCore.Examples.HelloAR
             }
 
             // Player has touched the Screen -> go back to main menu
-            SceneManager.LoadScene("Menu");
+            // TODO: reenable fix?
+            //SceneManager.LoadScene("Menu");
 
             // Raycast against the location the player touched to search for planes.
             TrackableHit hit;
