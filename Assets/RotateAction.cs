@@ -27,6 +27,8 @@ public class RotateAction : MonoBehaviour {
 
         if (Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
         {
+            Debug.Log("Hit something!");
+            DestroyObject(gameObject);
             if ((hit.Trackable.Equals(this)))
             {
                 TaskOnClick();
