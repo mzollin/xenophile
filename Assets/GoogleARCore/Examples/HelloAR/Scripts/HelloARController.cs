@@ -77,6 +77,8 @@ namespace GoogleARCore.Examples.HelloAR
         /// the application to avoid per-frame allocations.
         /// </summary>
         private List<DetectedPlane> m_AllPlanes = new List<DetectedPlane>();
+        private bool createObject = false;
+        private bool objectCreated = false;
 
         /// <summary>
         /// True if the app is in the process of quitting due to an ARCore connection error, otherwise false.
@@ -99,6 +101,12 @@ namespace GoogleARCore.Examples.HelloAR
                 if (m_AllPlanes[i].TrackingState == TrackingState.Tracking)
                 {
                     showSearchingUI = false;
+                    createObject = true;
+                    if (!objectCreated)
+                    {
+                        var antigravitypodObject = Instantiate(AntigravitypodPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                        objectCreated = true;
+                    }
                     break;
                 }
             }
@@ -131,17 +139,17 @@ namespace GoogleARCore.Examples.HelloAR
                 {
                     // Instantiate Andy model at the hit pose.
                     var alienartifactObject = Instantiate(AlienartifactPrefab, hit.Pose.position, hit.Pose.rotation);
-                    var antigravitypodObject = Instantiate(AntigravitypodPrefab, hit.Pose.position, hit.Pose.rotation);
-                    alienfontObject = Instantiate(AlienfontPrefab, hit.Pose.position, hit.Pose.rotation);
+                    //var antigravitypodObject = Instantiate(AntigravitypodPrefab, hit.Pose.position, hit.Pose.rotation);
+                    //alienfontObject = Instantiate(AlienfontPrefab, hit.Pose.position, hit.Pose.rotation);
 
                     // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
                     alienartifactObject.transform.Rotate(alienartifactRotation);
                     alienartifactObject.transform.Translate(alienartifactTranslation);
                     alienartifactObject.transform.localScale = alienartifactScale;
 
-                    antigravitypodObject.transform.Rotate(antigravitypodRotation);
-                    antigravitypodObject.transform.Translate(antigravitypodTranslation);
-                    antigravitypodObject.transform.localScale = antigravitypodScale;
+                    //antigravitypodObject.transform.Rotate(antigravitypodRotation);
+                    //antigravitypodObject.transform.Translate(antigravitypodTranslation);
+                    //antigravitypodObject.transform.localScale = antigravitypodScale;
 
                     alienfontObject.transform.Rotate(alienfontRotation);
                     alienfontObject.transform.Translate(alienfontTranslation);
@@ -153,7 +161,7 @@ namespace GoogleARCore.Examples.HelloAR
 
                     // Make Andy model a child of the anchor.
                     alienartifactObject.transform.parent = anchor.transform;
-                    antigravitypodObject.transform.parent = anchor.transform;
+                    //antigravitypodObject.transform.parent = anchor.transform;
                     alienfontObject.transform.parent = anchor.transform;
                 }
             }
