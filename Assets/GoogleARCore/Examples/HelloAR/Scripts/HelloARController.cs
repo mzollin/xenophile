@@ -66,6 +66,10 @@ namespace GoogleARCore.Examples.HelloAR
         private Vector3 alienartifactTranslation = new Vector3(0.0f, 0.5f, 0.0f);
         private Vector3 alienartifactScale = new Vector3(1.0f, 1.0f, 1.0f);
 
+        private Vector3 suzanneRotation = new Vector3(-90.0f, 0.0f, 0.0f);
+        private Vector3 suzanneTranslation = new Vector3(0.0f, 0.0f, 0.3f);
+        private Vector3 suzanneScale = new Vector3(0.15f, 0.15f, 0.15f);
+
         private Vector3 antigravitypodRotation = new Vector3(-90.0f, 0.0f, 0.0f);
         private Vector3 antigravitypodTranslation = new Vector3(0.0f, 0.0f, 0.0f);
         private Vector3 antigravitypodScale = new Vector3(0.25f, 0.25f, 0.25f);
@@ -106,32 +110,35 @@ namespace GoogleARCore.Examples.HelloAR
                     createObject = true;
                     if (!objectCreated)
                     {
+                        var anchor = m_AllPlanes[i].CreateAnchor(m_AllPlanes[i].CenterPose);
+
+                        var antigravitypodObject = Instantiate(AntigravitypodPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                        antigravitypodObject.transform.Rotate(antigravitypodRotation);
+                        antigravitypodObject.transform.Translate(antigravitypodTranslation);
+                        antigravitypodObject.transform.localScale = antigravitypodScale;
+                        antigravitypodObject.transform.parent = anchor.transform;
+
                         switch (StringHolder.name)
                         {
                             case "hellwailerPrefab":
-
-                                var antigravitypodObject = Instantiate(AntigravitypodPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
-                                antigravitypodObject.transform.Rotate(antigravitypodRotation);
-                                antigravitypodObject.transform.Translate(antigravitypodTranslation);
-                                antigravitypodObject.transform.localScale = antigravitypodScale;
 
                                 var alienartifactObject = Instantiate(AlienartifactPrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
                                 alienartifactObject.transform.Rotate(alienartifactRotation);
                                 alienartifactObject.transform.Translate(alienartifactTranslation);
                                 alienartifactObject.transform.localScale = alienartifactScale;
-
-                                var anchor = m_AllPlanes[i].CreateAnchor(m_AllPlanes[i].CenterPose);
-                                antigravitypodObject.transform.parent = anchor.transform;
                                 alienartifactObject.transform.parent = anchor.transform;
                                 break;
                             case "Suzanne":
-                                var suzanne = Instantiate(suzannePrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                                var suzanneObject = Instantiate(suzannePrefab, m_AllPlanes[i].CenterPose.position, m_AllPlanes[i].CenterPose.rotation);
+                                suzanneObject.transform.Rotate(suzanneRotation);
+                                suzanneObject.transform.Translate(suzanneTranslation);
+                                suzanneObject.transform.localScale = suzanneScale;
+                                suzanneObject.transform.parent = anchor.transform;
                                 break;
                             default:
                                 continue;
 
                         }
-
                         objectCreated = true;
                     }
                     break;

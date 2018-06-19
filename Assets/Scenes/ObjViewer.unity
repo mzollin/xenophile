@@ -1004,7 +1004,7 @@ MonoBehaviour:
   AntigravitypodPrefab: {fileID: 100000, guid: 9fce70f6e687d604a912662b52801ba8, type: 3}
   AlienfontPrefab: {fileID: 1651933359531598, guid: 1edbc5c072a68c2449f85a0666a0ef88,
     type: 2}
-  suzannePrefab: {fileID: 1429438729472280, guid: 0f437e6d79cef314397b2d2eaaa41c11,
+  suzannePrefab: {fileID: 1790239630129556, guid: 053424e81abf47f4fb649df37a50f130,
     type: 2}
   SearchingForPlaneUI: {fileID: 1136310799}
 --- !u!4 &1609655103

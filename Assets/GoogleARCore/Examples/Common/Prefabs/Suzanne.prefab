@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33759215068310906}
   - component: {fileID: 23359628490730946}
   - component: {fileID: 114483545115627846}
+  - component: {fileID: 114299509208522632}
+  - component: {fileID: 64487038095363540}
   m_Layer: 0
   m_Name: Suzanne
   m_TagString: Untagged
@@ -83,6 +85,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1790239630129556}
   m_Mesh: {fileID: 4300000, guid: 9c420c7d4807c614ab86b2913d3e94ff, type: 3}
+--- !u!64 &64487038095363540
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790239630129556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 9c420c7d4807c614ab86b2913d3e94ff, type: 3}
+--- !u!114 &114299509208522632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790239630129556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa8816b29f806724388141ddfcbc6726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114483545115627846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,3 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d75df2d227f4ad54a802be3ef7d8193c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotate: 1
+  rotate_left: 0
+  rotate_up: 0
+  rotate_right: 1
+  rotate_down: 0
+  suzanne: 1
