@@ -1001,7 +1001,8 @@ MonoBehaviour:
     type: 2}
   AlienartifactPrefab: {fileID: 1536770372799938, guid: d0068c3142765c04582b06feab9c9954,
     type: 2}
-  AntigravitypodPrefab: {fileID: 100000, guid: 9fce70f6e687d604a912662b52801ba8, type: 3}
+  AntigravitypodPrefab: {fileID: 1835900986763960, guid: e9b7f918dc3593d4f8790b5e3058b7e5,
+    type: 2}
   AlienfontPrefab: {fileID: 1651933359531598, guid: 1edbc5c072a68c2449f85a0666a0ef88,
     type: 2}
   suzannePrefab: {fileID: 1790239630129556, guid: 053424e81abf47f4fb649df37a50f130,

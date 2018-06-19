@@ -72,7 +72,7 @@ namespace GoogleARCore.Examples.HelloAR
 
         private Vector3 antigravitypodRotation = new Vector3(-90.0f, 0.0f, 0.0f);
         private Vector3 antigravitypodTranslation = new Vector3(0.0f, 0.0f, 0.0f);
-        private Vector3 antigravitypodScale = new Vector3(0.25f, 0.25f, 0.25f);
+        private Vector3 antigravitypodScale = new Vector3(0.8f, 0.8f, 0.8f);
 
         private Vector3 alienfontRotation = new Vector3(0.0f, 0.0f, 0.0f);
         private Vector3 alienfontTranslation = new Vector3(0.0f, 0.0f, 0.0f);
